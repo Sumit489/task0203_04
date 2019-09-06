@@ -1,0 +1,115 @@
+﻿@model mvcdemofolderstructure.Models.UserModel
+
+
+@{
+    ViewBag.Title = "SignUp";
+}
+
+<h2>SignUp</h2>
+
+<div class="row">
+    <div class="col-md-8">
+        <h4>SignUp</h4>
+        <form method="post" action="@Url.Action("SignUpAuto","User")" class="form-horizontal">
+            <div class="form-group">
+                <label for="UserName" class="control-label">UserName</label>
+                @Html.TextBoxFor(model => model.UserName, htmlAttributes: new
+           {
+               @class = "form-control"
+           })
+            </div>
+
+            <div class="form-group">
+                <label for="EmailId" class="control-label">EmailId</label>
+                @Html.TextBoxFor(model => model.EmailId, htmlAttributes: new
+           {
+               @class = "form-control"
+           })
+            </div>
+
+            <div class="form-group">
+                <label for="Password" class="control-label">User Password</label>
+                @Html.PasswordFor(model => model.Password, htmlAttributes: new
+           {
+               @class = "form-control"
+           })
+            </div>
+
+            <div class="form-group">
+                <label for="ConfirmPassword" class="control-label">Confirm Password</label>
+                @Html.PasswordFor(model => model.ConfirmPassword, htmlAttributes: new
+           {
+               @class = "form-control"
+           })
+            </div>
+
+            <div class="form-group">
+                <label for="MobileNumber" class="control-label">Mobile Number</label>
+                @Html.TextBoxFor(model => model.MobileNumber, htmlAttributes: new
+           {
+               @class = "form-control"
+           })
+            </div>
+            <div class="form-group">
+                <label for="Imageurl" class="control-label">ImageUrl</label>
+                <input type="file" class="form-control" name="UserImageUrl" id="UserrImageUrl" />
+
+
+            </div>
+
+            <div class="form-group">
+                <label for="Gender" class="control-label">Gender</label>
+                <input type="radio" name="Gender" id="MaleGender" class="radio-inline" />Male
+                <input type="radio" name="Gender" id="FeMaleGender" class="radio-inline" />FeMale
+            </div>
+
+            <div class="form-group">
+                <label for="Country" class="control-label">country</label>
+                @Html.DropDownList("CountryId", (IEnumerable<SelectListItem>)(ViewBag.countrydatasource), "Select Country", htmlAttributes: new
+           {
+               @class = "form-control"
+           })
+
+            </div>
+
+            <div class="form-group">
+                <label for="State" class="control-label">state</label>
+                @Html.DropDownList("StateId", (IEnumerable<SelectListItem>)(ViewBag.statedatasource), "Select State", htmlAttributes: new
+           {
+               @class = "form-control"
+           })
+
+            </div>
+
+            <div class="btn-group">
+                <button class="btn btn-primary" type="submit" ><i class="glyphicon glyphicon-user"> </i> > signup </button>
+            </div>
+
+        </form>
+    </div>
+    <div class="col-md-4>
+        <h4>SignIn</h4>
+        <form method="post"  class="form-horizontal">
+            <div class="form-group">
+                <label for="UserName" class="control-label">UserName</label>
+                @Html.TextBoxFor(model => model.UserName, htmlAttributes: new
+           {
+               @class = "form-control"
+           })
+            </div>
+
+            <div class="form-group">
+                <label for="Password" class="control-label">User Password</label>
+                @Html.PasswordFor(model => model.Password, htmlAttributes: new
+           {
+               @class = "form-control"
+           })
+            </div>
+
+            <div class="btn-group">
+                <button class="btn btn-primary" type="submit"><i class="glyphicon glyphicon-user"> </i> > signin </button>
+            </div>
+           </form>
+</div>
+</div>
+
